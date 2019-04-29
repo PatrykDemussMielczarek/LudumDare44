@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Character.gd" type="Script" id=1]
+[ext_resource path="res://NecroBoi_Move1_New.png" type="Texture" id=2]
+[ext_resource path="res://NecroBoi_Move2_New.png" type="Texture" id=3]
+[ext_resource path="res://NecroBoi_New.png" type="Texture" id=4]
+[ext_resource path="res://NecroBoi_Spell_1_New.png" type="Texture" id=5]
+[ext_resource path="res://NecroBoi_Spell_2_New.png" type="Texture" id=6]
+[ext_resource path="res://NecroBoiSpellMove1_New.png" type="Texture" id=7]
+[ext_resource path="res://NecroBoiSpellMove2_New.png" type="Texture" id=8]
+[ext_resource path="res://Body.png" type="Texture" id=9]
+[ext_resource path="res://Audio_Walk.wav" type="AudioStream" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.80855, 15.9318 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Move",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Spelling",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "SpellingMove",
+"speed": 6.0
+} ]
+
+[node name="BloodMage" type="KinematicBody2D"]
+z_index = 10
+collision_mask = 15
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+self_modulate = Color( 0.670588, 0.960784, 1, 1 )
+scale = Vector2( -0.128, 0.128 )
+frames = SubResource( 2 )
+animation = "Idle"
+playing = true
+
+[node name="Down" type="RayCast2D" parent="."]
+position = Vector2( -6, 0 )
+enabled = true
+cast_to = Vector2( 0, 18 )
+collision_mask = 110
+
+[node name="Down2" type="RayCast2D" parent="."]
+position = Vector2( 6, 0 )
+enabled = true
+cast_to = Vector2( 0, 18 )
+collision_mask = 110
+
+[node name="Down3" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 18 )
+collision_mask = 110
+
+[node name="RangeRing" type="Sprite" parent="."]
+self_modulate = Color( 0.709804, 0, 0, 0.25098 )
+z_index = -32
+texture = ExtResource( 9 )
+
+[node name="Walking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+volume_db = -30.0
+

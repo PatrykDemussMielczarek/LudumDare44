@@ -1,0 +1,323 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Mapa.gd" type="Script" id=1]
+[ext_resource path="res://SoundManager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://BluredBloodBackground2.png" type="Texture" id=3]
+[ext_resource path="res://Body.png" type="Texture" id=4]
+[ext_resource path="res://HealthUI.png" type="Texture" id=5]
+[ext_resource path="res://Character.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Gate.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Terrain.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Spikes.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Potion.tscn" type="PackedScene" id=10]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 584.356, 347.076 )
+script = ExtResource( 1 )
+
+[node name="SoundManager" parent="." instance=ExtResource( 2 )]
+
+[node name="BloodDrops" type="Node2D" parent="."]
+
+[node name="DeadBloods" type="Node2D" parent="."]
+
+[node name="BloodTiles" type="Node2D" parent="."]
+
+[node name="BackGround" type="Sprite" parent="."]
+position = Vector2( -59.4507, -46.8614 )
+scale = Vector2( 0.402069, 0.415619 )
+z_index = -100
+texture = ExtResource( 3 )
+
+[node name="UI" type="Node2D" parent="."]
+position = Vector2( 316.465, 172.248 )
+z_index = 200
+
+[node name="Meter" type="TextureProgress" parent="UI"]
+margin_left = -1.08057
+margin_top = 1.08081
+margin_right = 254.919
+margin_bottom = 257.081
+rect_rotation = 180.0
+rect_scale = Vector2( 0.25, 0.25 )
+max_value = 1.0
+step = 0.001
+value = 0.5
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 4 )
+fill_mode = 2
+tint_under = Color( 0.352941, 0.352941, 0.352941, 1 )
+tint_progress = Color( 0.662745, 0.0588235, 0.0588235, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="UI/Meter"]
+margin_left = -137.379
+margin_top = -136.437
+margin_right = 118.621
+margin_bottom = 119.563
+rect_scale = Vector2( 2.08, 2.08 )
+texture = ExtResource( 5 )
+
+[node name="BloodMage" parent="." instance=ExtResource( 6 )]
+position = Vector2( -362.657, -225.764 )
+
+[node name="Gate" parent="." instance=ExtResource( 7 )]
+position = Vector2( 240.954, 36.0258 )
+
+[node name="Zombies" type="Node2D" parent="."]
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Terrain11" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -502.033, -52.3021 )
+
+[node name="Terrain12" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -565.844, -52.3021 )
+
+[node name="Terrain6" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -333.861, 4.16481 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain19" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 397.178, -144.983 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain36" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -88.6935, -200.277 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain37" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -87.9952, -228.211 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain27" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -334.718, 183.357 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain55" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 396.32, 34.209 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain59" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 393.988, 212.661 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain33" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -90.5009, -21.085 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain51" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 152.278, -281.875 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain45" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 272.353, 211.761 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain40" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -91.1798, 169.51 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain8" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -333.861, -85.3968 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain18" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 397.178, -234.545 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain10" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 150.774, -56.9649 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain29" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -334.718, 93.7951 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain52" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 396.32, -55.3526 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain56" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 393.988, 123.1 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain30" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -89.5509, -110.647 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain42" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 272.353, 122.199 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain15" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -395.913, -85.3968 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain23" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 335.125, -234.545 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain17" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 88.7214, -56.9649 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain24" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 26.5173, 6.88708 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Terrain25" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -25.5571, -198.807 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Terrain26" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -396.771, 93.7951 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain54" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 334.268, -55.3526 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain58" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 331.935, 123.1 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain48" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 87.8641, 122.227 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain31" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -151.604, -110.647 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain44" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 210.3, 122.199 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain9" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -333.003, -147.145 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain21" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 398.035, -296.292 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain14" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -395.913, -147.145 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain22" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 335.125, -296.292 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain4" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -396.62, 4.16481 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain20" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 334.418, -144.983 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain5" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 88.0144, 32.5967 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain38" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -151.453, -200.277 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain39" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -150.755, -228.211 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain28" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -397.478, 183.357 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain53" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 333.561, 34.209 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain57" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 331.228, 212.661 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain47" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 87.157, 211.789 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain32" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -152.311, -21.085 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain50" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 88.4953, -281.511 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain43" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( 209.593, 211.761 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Terrain41" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -153.94, 169.51 )
+scale = Vector2( 1, 1.42 )
+
+[node name="Raisins" type="Node2D" parent="."]
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spikes" parent="Spikes" instance=ExtResource( 9 )]
+position = Vector2( -284.835, -174.475 )
+rotation = 1.5708
+
+[node name="Spikes3" parent="Spikes" instance=ExtResource( 9 )]
+position = Vector2( -197.338, -22.584 )
+rotation = -1.5708
+
+[node name="Spikes13" parent="Spikes" instance=ExtResource( 9 )]
+position = Vector2( 286.731, -85.416 )
+rotation = -1.5708
+
+[node name="Spikes14" parent="Spikes" instance=ExtResource( 9 )]
+position = Vector2( 199.916, -85.3146 )
+rotation = 1.5708
+
+[node name="Spikes4" parent="Spikes" instance=ExtResource( 9 )]
+position = Vector2( -197.5, 9.55884 )
+rotation = -1.5708
+
+[node name="Spikes7" parent="Spikes" instance=ExtResource( 9 )]
+position = Vector2( 11.7318, -25.2416 )
+
+[node name="Spikes8" parent="Spikes" instance=ExtResource( 9 )]
+position = Vector2( 74.8152, -116.015 )
+
+[node name="Spikes12" parent="Spikes" instance=ExtResource( 9 )]
+position = Vector2( 136.671, -116.089 )
+
+[node name="Spikes9" parent="Spikes" instance=ExtResource( 9 )]
+position = Vector2( 40.8499, -25.2416 )
+
+[node name="Spikes10" parent="Spikes" instance=ExtResource( 9 )]
+position = Vector2( 106.031, -116.19 )
+
+[node name="Spikes11" parent="Spikes" instance=ExtResource( 9 )]
+position = Vector2( 168.062, -116.264 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -60.204, -47.4625 )
+current = true
+zoom = Vector2( 0.75, 0.75 )
+
+[node name="Potions" type="Node2D" parent="."]
+
+[node name="Potion" parent="Potions" instance=ExtResource( 10 )]
+position = Vector2( 149.258, 128.936 )
+
+[node name="Potion2" parent="Potions" instance=ExtResource( 10 )]
+position = Vector2( -24.2782, -239.588 )
+
+[node name="Potion3" parent="Potions" instance=ExtResource( 10 )]
+position = Vector2( 239.469, -227.791 )
+
+[node name="Fountains" type="Node2D" parent="."]
+

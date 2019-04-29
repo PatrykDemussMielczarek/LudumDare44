@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://MainManager.gd" type="Script" id=1]
+[ext_resource path="res://Audio_BG.wav" type="AudioStream" id=2]
+
+[node name="MainManager" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1.10803, 2.21606 )
+stream = ExtResource( 2 )
+volume_db = -23.223
+attenuation = 0.0
+
+[node name="Time" type="Node2D" parent="."]
+position = Vector2( 136.955, 501.055 )
+z_index = 400
+
+[node name="Display" type="Label" parent="Time"]
+margin_left = 11.6913
+margin_top = 8.35091
+margin_right = 75.6913
+margin_bottom = 40.3509
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="Maps" type="Node2D" parent="."]
+
